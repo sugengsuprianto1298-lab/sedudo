@@ -1,0 +1,245 @@
+/* ============================ */
+/* ===== STYLE UMUM =========== */
+/* ============================ */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #d0f0fd, #e6f7ff);
+    color: #333;
+}
+
+h1, h2 {
+    margin-top: 0;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* ============================ */
+/* ===== HEADER =============== */
+/* ============================ */
+header {
+    background: linear-gradient(to right, #1572A1, #3282B8);
+    padding: 30px 20px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+/* ============================ */
+/* ===== NAVBAR =============== */
+/* ============================ */
+nav {
+    background: #0F4C75;
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(4px);
+}
+
+nav a:hover {
+    background: #46A3C3;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+nav a.active {
+    background: #1B98E0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transform: scale(1.1);
+}
+
+/* ============================ */
+/* ===== SECTION ============== */
+/* ============================ */
+section {
+    padding: 35px 20px;
+    display: none;
+    max-width: 1100px;
+    margin: 20px auto;
+    background: rgba(255,255,255,0.9);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    animation: fadeIn 0.7s ease forwards;
+}
+
+#home {
+    display: block;
+}
+
+section h2 {
+    color: #0F4C75;
+    border-bottom: 2px solid #46A3C3;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* ============================ */
+/* ===== IMAGES =============== */
+/* ============================ */
+img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    margin: 15px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05) rotate(0.5deg);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+}
+
+/* ============================ */
+/* ===== FOOTER =============== */
+/* ============================ */
+footer {
+    background: linear-gradient(to right, #1572A1, #0F4C75);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.95em;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+}
+
+/* ============================ */
+/* ===== LISTS ================ */
+/* ============================ */
+ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* ============================ */
+/* ===== ANIMATIONS ============ */
+/* ============================ */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================ */
+/* ===== RESPONSIVE ============ */
+/* ============================ */
+@media (max-width: 768px) {
+    header h1 { font-size: 2em; }
+    section { padding: 25px 15px; }
+    nav { flex-direction: column; gap: 8px; }
+}
+
+@media (max-width: 480px) {
+    header h1 { font-size: 1.6em; }
+    header p { font-size: 1em; }
+    nav a { padding: 8px 12px; font-size: 0.9em; }
+    img { max-width: 100%; }
+}
+/* ============================ */
+/* ===== KARAKTER KARTUN ====== */
+/* ============================ */
+#cartoon-guard {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto 40px auto;
+    text-align: center;
+    pointer-events: none;
+}
+
+/* Gambar karakter */
+.guard {
+    width: 120px;
+    position: absolute;
+    bottom: -50px; /* Mulai dari bawah layar untuk animasi cinematic */
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
+/* Posisi karakter */
+.guard.female {
+    left: 20%;
+}
+
+.guard.male {
+    right: 20%;
+}
+
+/* ============================ */
+/* ===== BALON UCAPAN ========= */
+/* ============================ */
+.speech-bubble {
+    position: absolute;
+    top: -100px; /* Posisi awal di atas karakter */
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background: #fff9c4;
+    color: #333;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transition: all 0.8s ease-out;
+    z-index: 10;
+}
+
+/* Tambahkan efek cinematic ketika muncul */
+#cartoon-guard.active .guard {
+    opacity: 1;
+    bottom: 20px;
+}
+
+#cartoon-guard.active .speech-bubble {
+    opacity: 1;
+    top: -120px;
+    transform: translateX(-50%) scale(1);
+}
+
+/* ============================ */
+/* ===== ANIMASI IDLE ========= */
+/* ============================ */
+.guard {
+    animation: float 3s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
